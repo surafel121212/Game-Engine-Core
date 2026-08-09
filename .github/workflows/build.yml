@@ -36,10 +36,10 @@ jobs:
           gradle-version: "8.9"
 
       - name: Build debug APK
-        run: gradle --no-daemon assembleDebug
+        run: cd Cobalt2D/android && gradle --no-daemon assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: cobalt2d-debug-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk
