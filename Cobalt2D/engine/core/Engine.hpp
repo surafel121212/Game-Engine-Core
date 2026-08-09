@@ -1,10 +1,12 @@
 #pragma once
 
 #include "engine/core/Time.hpp"
+#include "engine/core/Profiler.hpp"
 #include "engine/ecs/Scene.hpp"
 #include "engine/input/Input.hpp"
 #include "engine/physics/PhysicsWorld.hpp"
 #include "engine/render/Renderer2D.hpp"
+#include "engine/scripting/ScriptRuntime.hpp"
 
 #include <functional>
 #include <memory>
@@ -38,6 +40,8 @@ public:
   Input& input() { return input_; }
   Renderer2D& renderer() { return renderer_; }
   PhysicsWorld& physics() { return physics_; }
+  Profiler& profiler() { return profiler_; }
+  ScriptRuntime& scripts() { return scripts_; }
   Scene& scene() { return *scene_; }
   void setScene(std::unique_ptr<Scene> scene);
   bool isInitialized() const { return initialized_; }
@@ -45,9 +49,11 @@ public:
 private:
   Config config_;
   Time time_;
+  Profiler profiler_;
   Input input_;
   Renderer2D renderer_;
   PhysicsWorld physics_;
+  ScriptRuntime scripts_;
   std::unique_ptr<Scene> scene_;
   bool initialized_{false};
   bool surfaceReady_{false};

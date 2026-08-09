@@ -47,16 +47,21 @@ add_library(CobaltEngine STATIC
   engine/core/Engine.cpp
   engine/core/Log.cpp
   engine/core/Time.cpp
+  engine/core/Profiler.cpp
   engine/ecs/Scene.cpp
   engine/input/Input.cpp
   engine/physics/PhysicsWorld.cpp
   engine/render/Renderer2D.cpp
   engine/scripting/LuaScript.cpp
+  engine/scripting/ScriptRuntime.cpp
   engine/serialization/SceneSerializer.cpp
   engine/animation/Animator.cpp
   engine/audio/AudioSystem.cpp
   engine/particles/ParticleSystem.cpp
   engine/tilemap/Tilemap.cpp
+  engine/assets/AssetManager.cpp
+  engine/project/ProjectSettings.cpp
+  engine/editor/CommandHistory.cpp
 )
 
 target_include_directories(CobaltEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -80,7 +85,7 @@ endif()
 
 if(COBALT_BUILD_TESTS)
   enable_testing()
-  foreach(test_name IN ITEMS test_math test_scene test_runtime)
+  foreach(test_name IN ITEMS test_math test_scene test_runtime test_upgrade)
     add_executable(cobalt_${test_name} tests/${test_name}.cpp)
     target_link_libraries(cobalt_${test_name} PRIVATE CobaltEngine)
     add_test(NAME cobalt_${test_name} COMMAND cobalt_${test_name})

@@ -20,6 +20,15 @@ Lua scripts.
   particles.
 - GitHub Actions workflow that installs Android SDK/NDK/CMake and uploads the
   debug APK.
+- Professional upgrade foundations:
+  - Lua lifecycle dispatch, safe reloads, exported properties, diagnostics,
+    breakpoints, and per-entity script runtime attachment.
+  - Filesystem-backed asset scanning/import, metadata sidecars, favorites,
+    search, type filtering, duplicate/move/delete, and import settings.
+  - Timeline keyframes, interpolation curves, animation events, and
+    condition-based animation state transitions.
+  - Project/build settings, categorized logging, frame profiling, command-based
+    undo/redo, virtual joystick, and reusable touch buttons.
 
 The project is deliberately honest about boundaries: the renderer exposes a
 mobile-friendly command buffer and Android GL context, while texture decoding,
@@ -38,8 +47,11 @@ engine/
   physics/          Box2D-backed physics boundary
   input/            keyboard, action map, touch state
   scripting/        Lua lifecycle and error boundary
+  assets/           asset discovery, metadata, search, and filesystem actions
+  project/          project and Android build settings
+  editor/           command history for undo/redo
   serialization/    scene persistence
-  animation/        sprite clip playback
+  animation/        clips, timelines, curves, events, state machines
   tilemap/          grid operations and flood fill
   particles/        allocation-bounded particle simulation
   audio/            audio groups and playback boundary
@@ -151,15 +163,51 @@ function onCollision(other)
 end
 ```
 
-The script host turns Lua errors into a stored `lastError()` plus an engine
-log entry. Game-specific bindings for transforms, input, physics, audio, and
-resources should be registered in the project runtime layer.
+The script host turns Lua errors into a stored `lastError()` plus a structured
+diagnostic and engine log entry. `ScriptRuntime` owns per-entity attachments
+and dispatches the lifecycle and collision callbacks.
+
+Scripts can expose Inspector values with `---@export`:
+
+```lua
+---@export
+speed = 250
+
+---@export
+playerName = "Player"
+```
+
+`LuaScript::inspectSource` reports inferred property metadata, while
+`setProperty` updates a live Lua global when Lua is enabled. The current
+runtime supports integer, float, boolean, and string inference; Vector2,
+Vector3, color, enum, and object-reference values are reserved for the editor
+binding layer.
+
+`LuaScript::reload` rebuilds a script state from its source path. Breakpoints
+are tracked by source line so an editor debugger can add pause/step behavior
+without changing the scripting API.
+
+## Assets and project settings
+
+`AssetManager` scans `Assets/` recursively, classifies known file types,
+creates `.meta` sidecars, and supports search, type filters, favorites,
+import, rename, duplicate, move, delete, and refresh. `Project.cobalt` stores
+project identity, resolution, orientation, performance, Android package ID,
+SDK targets, and architecture settings.
+
+## Animation and editor foundations
+
+`Animator` supports the original frame clips plus editable timeline tracks,
+keyframes, interpolation modes, event callbacks, and an
+`AnimationStateMachine`. `CommandHistory` provides execute/undo/redo for
+scene, tilemap, animation, and asset editor commands.
 
 ## Known limitations
 
-This first source release establishes the real runtime boundaries and a
-buildable Android shell. A full visual editor, texture atlas importer,
-material/shader asset compiler, audio decoder backend, prefab authoring UI,
-and complete Lua userdata bindings are intentionally left as the next
-increment rather than represented by fake implementations. The example and
-core modules are usable foundations for those additions.
+This upgrade establishes the real runtime and editor-data boundaries while
+keeping the Android shell buildable. A full visual editor, texture atlas
+thumbnail generation, production shader/material pipeline, audio decoder
+backend, prefab authoring UI, complete Lua userdata bindings, and an in-app
+script editor remain future work rather than being represented by fake
+implementations. The example and upgraded modules are usable foundations for
+those additions.

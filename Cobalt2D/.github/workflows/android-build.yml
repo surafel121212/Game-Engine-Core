@@ -31,7 +31,7 @@ jobs:
       - name: Make Gradle executable
         run: test -x "$(command -v gradle)"
       - name: Build debug APK
-        run: gradle assembleDebug
+        run: gradle --no-daemon assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

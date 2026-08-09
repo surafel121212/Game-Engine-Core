@@ -1,0 +1,18 @@
+{
+  "name": "Cobalt Platformer",
+  "engineVersion": "0.2.0",
+  "defaultScene": "Examples/Platformer/Scenes/Level1.scene",
+  "orientation": "landscape",
+  "width": 1280,
+  "height": 720,
+  "gravity": -20,
+  "targetFps": 60,
+  "resolutionScale": 1,
+  "vsync": true,
+  "packageId": "dev.cobalt.platformer",
+  "minSdk": 24,
+  "targetSdk": 35,
+  "arm64": true,
+  "vibration": false,
+  "internet": false
+}

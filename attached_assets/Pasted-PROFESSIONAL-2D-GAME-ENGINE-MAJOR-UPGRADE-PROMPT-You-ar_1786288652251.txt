@@ -1,0 +1,1230 @@
+PROFESSIONAL 2D GAME ENGINE — MAJOR UPGRADE PROMPT
+
+You are upgrading an existing C++ 2D game engine.
+
+DO NOT rebuild the project from scratch unless absolutely necessary.
+
+FIRST inspect the existing repository and understand the current architecture, implemented systems, build system, Android runtime, editor, renderer, scene system, asset system, and scripting system.
+
+Then upgrade the existing engine into a much more professional, complete, Android-focused 2D game-development environment.
+
+The final result should feel like a serious 2D game engine/editor rather than a prototype.
+
+Do not remove working features.
+
+Do not break existing projects.
+
+Preserve backward compatibility where reasonably possible.
+
+Implement features instead of creating fake buttons or placeholder panels.
+
+Every editor control should be connected to real underlying engine functionality.
+
+---
+
+1. PROFESSIONAL SCRIPTING SYSTEM
+
+This is one of the highest priorities.
+
+Create a complete and professional scripting architecture.
+
+The engine must allow game developers to create gameplay without modifying the engine's C++ source.
+
+Use Lua as the primary high-level scripting language.
+
+The scripting system must support:
+
+- Script assets
+- Script components
+- Script attachment
+- Script detachment
+- Script creation from editor
+- Script editing
+- Script execution
+- Script reload
+- Script lifecycle
+- Script properties
+- Script variables
+- Script events
+- Script error reporting
+- Script debugging
+- Script API documentation
+- Script-to-engine communication
+- Engine-to-script callbacks
+
+Support lifecycle callbacks:
+
+onCreate()
+onAwake()
+onStart()
+onEnable()
+onDisable()
+onUpdate(dt)
+onFixedUpdate(dt)
+onLateUpdate(dt)
+onDestroy()
+
+Physics callbacks:
+
+onCollisionEnter(other)
+onCollisionStay(other)
+onCollisionExit(other)
+
+Trigger callbacks:
+
+onTriggerEnter(other)
+onTriggerStay(other)
+onTriggerExit(other)
+
+Input callbacks where appropriate.
+
+---
+
+2. SCRIPT INSPECTOR / EXPOSED VARIABLES
+
+Allow Lua scripts to expose editable properties.
+
+Example:
+
+---@export
+speed = 250
+
+---@export
+jumpForce = 500
+
+---@export
+health = 100
+
+---@export
+playerName = "Player"
+
+The Inspector should automatically display exposed variables.
+
+Support:
+
+- integer
+- float
+- boolean
+- string
+- Vector2
+- Vector3
+- color
+- enum
+- GameObject reference
+- component reference
+- asset reference
+
+The developer should be able to modify these values in the Inspector without editing the Lua file.
+
+---
+
+3. SCRIPT EDITOR
+
+Create a professional integrated script editor.
+
+Features:
+
+- syntax highlighting
+- line numbers
+- indentation
+- code folding
+- search
+- replace
+- go to line
+- autocomplete where practical
+- error highlighting
+- warnings
+- Lua API hints
+- file tabs
+- unsaved changes indicator
+
+Provide an external-editor workflow as well if desired.
+
+The engine should detect script file changes and reload safely.
+
+---
+
+4. SCRIPT DEBUGGING
+
+Implement a useful scripting debugger.
+
+Support:
+
+- runtime errors
+- stack traces
+- file names
+- line numbers
+- warnings
+- breakpoints where practical
+- pause execution
+- resume
+- step over
+- step into
+- variable inspection where practical
+
+Errors should appear in the editor console.
+
+Clicking an error should open the corresponding script and line.
+
+---
+
+5. COMPLETE ENGINE API FOR LUA
+
+Expose a clean API.
+
+Lua should be able to control:
+
+GameObject
+Transform
+SpriteRenderer
+Camera2D
+Rigidbody2D
+Collider2D
+Animator
+AudioSource
+ParticleEmitter
+Tilemap
+UI
+Input
+Physics
+Scene
+Time
+Debug
+Resources
+Random
+Math
+Application
+
+Example:
+
+local player = GameObject.find("Player")
+
+player.transform.position = Vector2.new(100, 200)
+
+player.rigidbody:applyForce(Vector2.new(500, 0))
+
+Audio.play("jump")
+
+Animator.play("Run")
+
+Scene.load("Level2")
+
+---
+
+6. COROUTINE / TIMER SYSTEM
+
+Provide gameplay-friendly asynchronous scripting.
+
+Support:
+
+wait(seconds)
+
+yield()
+
+timers
+
+delayed callbacks
+
+coroutines
+
+Example:
+
+function onStart()
+coroutine.start(function()
+wait(2)
+print("Two seconds passed")
+end)
+end
+
+---
+
+7. ASSET MANAGEMENT — PROFESSIONAL SYSTEM
+
+Create a complete professional Asset Management system.
+
+The Asset Browser must support:
+
+- folders
+- subfolders
+- search
+- filtering
+- sorting
+- thumbnails
+- list view
+- grid view
+- favorites
+- recently used
+- metadata
+- asset preview
+- rename
+- duplicate
+- move
+- delete
+- copy
+- paste
+- drag and drop
+- import
+- reimport
+- refresh
+
+Support asset types:
+
+Textures
+Sprites
+Sprite Sheets
+Audio
+Music
+Fonts
+Lua Scripts
+Scenes
+Prefabs
+Tilemaps
+Tilesets
+Animations
+Materials
+Shaders
+Particle configurations
+UI assets
+
+---
+
+8. ASSET IMPORT PIPELINE
+
+Create a proper asset import pipeline.
+
+When a new file is added to the project:
+
+1. Detect it.
+2. Determine its type.
+3. Import it.
+4. Generate metadata.
+5. Generate thumbnails where appropriate.
+6. Cache processed data.
+7. Make it available to the engine.
+
+Support import settings per asset.
+
+For textures:
+
+- filtering
+- mipmaps where appropriate
+- compression
+- pixel-art mode
+- nearest filtering
+- linear filtering
+- texture atlas settings
+- alpha handling
+
+For audio:
+
+- streaming
+- decompression mode
+- loop
+- volume defaults
+
+---
+
+9. ASSET INSPECTOR
+
+Selecting an asset should display a professional Inspector.
+
+For textures:
+
+- dimensions
+- format
+- filtering
+- compression
+- pivot
+- atlas settings
+
+For audio:
+
+- duration
+- channels
+- sample rate
+- streaming
+- loop
+
+For scripts:
+
+- file path
+- language
+- size
+- errors
+- references
+
+For scenes:
+
+- scene information
+- object count
+- dependencies
+
+---
+
+10. PROFESSIONAL ANIMATION SYSTEM
+
+Create a significantly more advanced animation system.
+
+Support:
+
+- sprite animation
+- frame animation
+- animation clips
+- animation tracks
+- keyframes
+- timeline
+- curves
+- interpolation
+- easing
+- looping
+- ping-pong
+- animation speed
+- animation blending
+- animation events
+
+---
+
+11. ANIMATION TIMELINE EDITOR
+
+Create a professional timeline editor similar in concept to animation timelines in modern game engines.
+
+Timeline should contain:
+
+Time ruler
+
+00:00   00:01   00:02   00:03   00:04
+
+Tracks:
+
+Player
+├── Position
+├── Rotation
+├── Scale
+├── Sprite
+├── Color
+├── Opacity
+└── Events
+
+Allow:
+
+- add track
+- remove track
+- rename track
+- add keyframe
+- delete keyframe
+- move keyframe
+- duplicate keyframe
+- copy/paste keyframes
+- snap to grid
+- zoom timeline
+- scrub timeline
+- playback
+- loop playback
+
+---
+
+12. ANIMATION CURVES
+
+Support animation curves.
+
+Examples:
+
+Position X
+Position Y
+Rotation
+Scale X
+Scale Y
+Opacity
+
+Provide interpolation modes:
+
+- constant
+- linear
+- smooth
+- ease in
+- ease out
+- ease in/out
+
+If practical, provide curve editor visualization.
+
+---
+
+13. ANIMATION EVENTS
+
+Allow events to occur at specific timeline positions.
+
+Example:
+
+0.00 animation starts
+0.50 footstep sound
+0.80 attack hit
+1.20 particle effect
+
+Expose animation events to Lua.
+
+Example:
+
+function onAnimationEvent(eventName)
+if eventName == "Footstep" then
+Audio.play("footstep.wav")
+end
+end
+
+---
+
+14. ANIMATION STATE MACHINE
+
+Implement an animation state machine.
+
+Support:
+
+Idle
+Run
+Jump
+Fall
+Attack
+Hurt
+Death
+
+Transitions should support conditions.
+
+Allow conditions to use script variables.
+
+Example:
+
+Speed > 10
+IsGrounded == true
+Attack == true
+
+Create a visual state-machine editor.
+
+---
+
+15. TIMELINE / SEQUENCER
+
+Add a general-purpose Timeline/Sequencer system.
+
+It should not only animate sprites.
+
+Allow timeline tracks for:
+
+- GameObject activation
+- position
+- rotation
+- scale
+- sprite changes
+- audio
+- particles
+- camera movement
+- UI animation
+- script events
+- scene events
+
+This can be used for:
+
+- cutscenes
+- intros
+- menus
+- dialogue
+- scripted events
+- boss introductions
+- camera sequences
+
+---
+
+16. PROJECT MANAGEMENT
+
+Create a professional project manager screen.
+
+When the application starts, show:
+
+PROJECT MANAGER
+
+Options:
+
+New Project
+Open Project
+Import Project
+Recent Projects
+Delete Project
+Rename Project
+Duplicate Project
+Project Settings
+
+Show:
+
+Project Name
+Location
+Last Opened
+Engine Version
+Project Type
+
+---
+
+17. PROJECT CREATION WIZARD
+
+New Project should allow:
+
+Project Name
+Project Location
+Template
+
+Templates:
+
+Empty 2D
+Platformer
+Top Down
+Mobile 2D
+Blank Project
+
+Allow selecting:
+
+Portrait
+Landscape
+
+Target resolution:
+
+1280x720
+1920x1080
+720x1280
+Custom
+
+---
+
+18. PROJECT DASHBOARD
+
+After opening a project, provide a dashboard with:
+
+Open Main Scene
+Recent Scenes
+Recent Assets
+Project Settings
+Build Settings
+Input Settings
+Rendering Settings
+Audio Settings
+Android Settings
+
+---
+
+19. ANDROID-FIRST UI
+
+The engine editor/runtime UI must be comfortable on Android phones and tablets.
+
+Use:
+
+- large touch targets
+- responsive layouts
+- scalable UI
+- safe areas
+- gesture support
+- touch-friendly controls
+- portrait mode
+- landscape mode
+- dynamic resolution
+- DPI-aware UI
+
+Do not design the UI only for desktop mouse interaction.
+
+---
+
+20. WINDOW / SCREEN MODES
+
+Support:
+
+- fullscreen
+- windowed
+- borderless
+- portrait
+- landscape
+- automatic orientation
+
+Provide settings for:
+
+Width
+Height
+Aspect ratio
+Orientation
+Fullscreen
+
+The runtime should adapt to different Android screen sizes.
+
+---
+
+21. RESPONSIVE EDITOR
+
+The editor should work on:
+
+- phones
+- tablets
+- desktop screens
+
+Panels should be resizable.
+
+Allow panels to collapse.
+
+Allow switching between:
+
+Desktop Layout
+Tablet Layout
+Phone Layout
+
+---
+
+22. MOBILE EDITOR NAVIGATION
+
+On touch devices support:
+
+- tap
+- double tap
+- long press
+- drag
+- pinch zoom
+- two-finger pan
+- swipe
+- touch selection
+
+Scene editing must remain usable without a mouse.
+
+---
+
+23. PROFESSIONAL TOOLBAR
+
+Provide tools:
+
+Select
+Move
+Rotate
+Scale
+Rect
+Tile
+Paint
+Erase
+Pan
+Zoom
+
+Add:
+
+Undo
+Redo
+Save
+Play
+Pause
+Stop
+
+---
+
+24. GAME PREVIEW / PLAY MODE
+
+Implement a proper Play Mode.
+
+Buttons:
+
+▶ Play
+⏸ Pause
+⏹ Stop
+↻ Restart
+
+Modes:
+
+Play Current Scene
+Play From Main Scene
+
+The game should run inside a Game Preview viewport.
+
+Allow switching between:
+
+Scene View
+Game View
+
+When Play Mode starts:
+
+- load scene
+- initialize scripts
+- initialize physics
+- initialize audio
+- start rendering
+- process input
+
+When Stop is pressed:
+
+- stop runtime
+- restore editor state
+- release runtime objects
+- restore scene state where appropriate
+
+---
+
+25. EDITOR / RUNTIME SEPARATION
+
+Clearly separate:
+
+Editor state
+Runtime state
+Project data
+Game data
+
+Changes made during Play Mode should not permanently modify the project unless explicitly applied.
+
+---
+
+26. INPUT MAP EDITOR
+
+Create a professional input configuration system.
+
+Actions:
+
+MoveLeft
+MoveRight
+Jump
+Attack
+Interact
+Pause
+
+Allow assigning:
+
+Touch
+Keyboard
+Mouse
+Gamepad
+
+For Android create touch-friendly action mapping.
+
+---
+
+27. ANDROID PERMISSIONS
+
+Create an Android permissions/settings system.
+
+Only request permissions that are genuinely necessary.
+
+Potential permissions may include, depending on implemented features:
+
+Internet
+Vibration
+Notifications
+Audio
+Storage/media access where required by the Android version
+
+Do NOT request dangerous or unnecessary permissions.
+
+Create Android settings where the developer can enable/disable optional capabilities.
+
+Handle modern Android permission behavior correctly.
+
+---
+
+28. ANDROID PERFORMANCE SETTINGS
+
+Add mobile optimization settings:
+
+Target FPS
+VSync where supported
+Texture quality
+Particle quality
+Lighting quality
+Shadow quality
+Audio quality
+Resolution scale
+
+Provide presets:
+
+Low
+Medium
+High
+Ultra
+
+---
+
+29. REAL 2D GAME DEVELOPMENT WORKFLOW
+
+The engine must support a real workflow:
+
+Create Project
+↓
+Create Scene
+↓
+Create GameObjects
+↓
+Import Assets
+↓
+Create Sprites
+↓
+Add Physics
+↓
+Create Scripts
+↓
+Attach Scripts
+↓
+Create Animations
+↓
+Create Tilemap
+↓
+Configure Camera
+↓
+Add Audio
+↓
+Test in Play Mode
+↓
+Fix Errors
+↓
+Build Android
+
+Make this workflow practical and coherent.
+
+---
+
+30. UNDO / REDO
+
+Implement robust editor undo/redo.
+
+Support:
+
+- object creation
+- deletion
+- transform changes
+- component changes
+- property changes
+- asset operations where practical
+- tilemap painting
+- animation editing
+
+Use command/history architecture rather than a fragile implementation.
+
+---
+
+31. COPY / PASTE
+
+Support:
+
+- GameObjects
+- Components
+- properties
+- animation keys
+- timeline keys
+- tilemap regions
+
+---
+
+32. PREFAB IMPROVEMENT
+
+Improve the prefab system.
+
+Support:
+
+- create prefab
+- edit prefab
+- instantiate prefab
+- overrides
+- apply overrides
+- revert overrides
+- nested prefabs where practical
+
+---
+
+33. SEARCH EVERYWHERE
+
+Provide global search.
+
+Search:
+
+Scenes
+GameObjects
+Scripts
+Assets
+Components
+Animations
+Project settings
+
+Allow quick navigation.
+
+---
+
+34. PROFESSIONAL LOGGING
+
+Improve console.
+
+Categories:
+
+INFO
+DEBUG
+WARNING
+ERROR
+SCRIPT
+PHYSICS
+RENDER
+AUDIO
+ANDROID
+
+Allow filtering and clearing.
+
+---
+
+35. PERFORMANCE PROFILER
+
+Add a basic performance profiler.
+
+Display:
+
+FPS
+Frame time
+CPU time
+GPU time where available
+Draw calls
+Triangles
+Texture memory
+Entity count
+Physics bodies
+Lua execution time
+
+Make the profiler available in Play Mode.
+
+---
+
+36. MEMORY / ASSET DEBUGGING
+
+Provide basic information about:
+
+Texture memory
+Audio memory
+Loaded assets
+Scene objects
+Physics objects
+
+---
+
+37. MOBILE GAME FEATURES
+
+Support common mobile-game needs:
+
+- touch input
+- virtual joystick
+- touch buttons
+- screen shake
+- vibration/haptic feedback
+- pause menu
+- safe-area handling
+- orientation handling
+- device resolution scaling
+
+Provide reusable UI components for virtual joystick and touch buttons.
+
+---
+
+38. BUILD SETTINGS
+
+Create a professional Build Settings screen.
+
+Configure:
+
+Application Name
+Package ID
+Version
+Version Code
+Orientation
+Minimum Android SDK
+Target Android SDK
+Architecture
+
+Architectures:
+
+arm64-v8a
+
+Optionally:
+
+armeabi-v7a
+
+The project should be optimized primarily for modern ARM64 Android phones.
+
+---
+
+39. GITHUB ACTIONS
+
+Verify and improve the existing GitHub Actions workflow.
+
+It must:
+
+- checkout
+- setup Java
+- setup Android SDK
+- install required SDK
+- install NDK
+- configure CMake
+- build debug APK
+- optionally build release APK
+- upload APK artifact
+
+Make the workflow reproducible from a clean GitHub checkout.
+
+---
+
+40. ANDROID PROJECT VALIDATION
+
+Before finishing:
+
+Perform a complete audit of:
+
+Gradle
+CMake
+NDK
+JNI
+AndroidManifest
+resources
+assets
+native libraries
+Lua
+Box2D
+OpenGL ES
+
+Fix build errors.
+
+Do not simply report errors without attempting to fix them.
+
+---
+
+41. DESIGN QUALITY
+
+The UI should look professional.
+
+Use:
+
+- clean dark theme
+- consistent spacing
+- clear hierarchy
+- readable typography
+- modern icons
+- responsive panels
+- accessible controls
+- touch-friendly buttons
+
+Avoid an unfinished prototype appearance.
+
+---
+
+42. IMPORTANT RULE
+
+Do not merely create visual UI mockups.
+
+Every important feature must connect to actual engine functionality.
+
+For example:
+
+If there is an "Add Script" button, it must actually create/attach a script.
+
+If there is a "Play" button, it must actually launch the runtime.
+
+If there is an animation timeline, it must actually edit animation data.
+
+If there is an Asset Browser, it must actually interact with project assets.
+
+If there is an Inspector, property changes must actually affect objects.
+
+If there is a Build Settings screen, settings must actually affect the Android project.
+
+---
+
+43. BACKWARD COMPATIBILITY
+
+Before modifying systems:
+
+Inspect existing project files.
+
+Preserve existing APIs where practical.
+
+Migrate old data formats safely.
+
+Do not unnecessarily delete existing functionality.
+
+---
+
+44. DEVELOPMENT PROCESS
+
+Work incrementally.
+
+FIRST:
+
+Inspect the existing project.
+
+SECOND:
+
+Create a technical plan.
+
+THIRD:
+
+Implement the scripting system.
+
+FOURTH:
+
+Implement asset management.
+
+FIFTH:
+
+Implement animation/timeline.
+
+SIXTH:
+
+Implement project manager.
+
+SEVENTH:
+
+Improve Android/mobile UI.
+
+EIGHTH:
+
+Improve Play Mode.
+
+NINTH:
+
+Improve build system.
+
+TENTH:
+
+Test everything.
+
+After every major change:
+
+- compile
+- fix errors
+- run tests
+- inspect affected files
+- verify existing features
+
+Do not move forward while introducing obvious broken code.
+
+---
+
+45. FINAL QUALITY BAR
+
+The final engine should feel like a serious, coherent 2D game development environment.
+
+It should be possible to:
+
+1. Open the engine.
+2. Create a project.
+3. Create a scene.
+4. Import assets.
+5. Create GameObjects.
+6. Add components.
+7. Create Lua scripts.
+8. Edit scripts.
+9. Attach scripts.
+10. Expose script variables.
+11. Create animations.
+12. Edit animation timelines.
+13. Create tilemaps.
+14. Add physics.
+15. Configure input.
+16. Add audio.
+17. Build UI.
+18. Press Play.
+19. Test the game.
+20. Debug errors.
+21. Stop Play Mode.
+22. Save the project.
+23. Push the project to GitHub.
+24. Run GitHub Actions.
+25. Obtain an Android APK artifact.
+
+The engine must be designed so that future features can be added without rewriting the entire architecture.
+
+At the end, provide a detailed implementation report and list any genuinely unfinished features. Never claim a feature is complete if it is only a visual placeholder.

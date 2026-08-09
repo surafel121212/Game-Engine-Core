@@ -10,12 +10,22 @@ add_library(cobalt_android SHARED
     "${COBALT_ROOT}/engine/core/Engine.cpp"
     "${COBALT_ROOT}/engine/core/Log.cpp"
     "${COBALT_ROOT}/engine/core/Time.cpp"
+    "${COBALT_ROOT}/engine/core/Profiler.cpp"
     "${COBALT_ROOT}/engine/ecs/Scene.cpp"
     "${COBALT_ROOT}/engine/input/Input.cpp"
+    "${COBALT_ROOT}/engine/input/MobileControls.cpp"
     "${COBALT_ROOT}/engine/physics/PhysicsWorld.cpp"
     "${COBALT_ROOT}/engine/render/Renderer2D.cpp"
     "${COBALT_ROOT}/engine/scripting/LuaScript.cpp"
+    "${COBALT_ROOT}/engine/scripting/ScriptRuntime.cpp"
     "${COBALT_ROOT}/engine/serialization/SceneSerializer.cpp"
+    "${COBALT_ROOT}/engine/animation/Animator.cpp"
+    "${COBALT_ROOT}/engine/audio/AudioSystem.cpp"
+    "${COBALT_ROOT}/engine/particles/ParticleSystem.cpp"
+    "${COBALT_ROOT}/engine/tilemap/Tilemap.cpp"
+    "${COBALT_ROOT}/engine/assets/AssetManager.cpp"
+    "${COBALT_ROOT}/engine/project/ProjectSettings.cpp"
+    "${COBALT_ROOT}/engine/editor/CommandHistory.cpp"
 )
 
 target_include_directories(cobalt_android PRIVATE "${COBALT_ROOT}")
