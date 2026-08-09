@@ -85,7 +85,7 @@ endif()
 
 if(COBALT_BUILD_TESTS)
   enable_testing()
-  foreach(test_name IN ITEMS test_math test_scene test_runtime test_upgrade)
+  foreach(test_name IN ITEMS test_math test_scene test_runtime test_renderer test_upgrade)
     add_executable(cobalt_${test_name} tests/${test_name}.cpp)
     target_link_libraries(cobalt_${test_name} PRIVATE CobaltEngine)
     add_test(NAME cobalt_${test_name} COMMAND cobalt_${test_name})
