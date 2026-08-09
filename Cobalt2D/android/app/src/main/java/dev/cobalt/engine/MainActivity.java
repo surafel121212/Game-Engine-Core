@@ -4,16 +4,38 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public final class MainActivity extends Activity implements SurfaceHolder.Callback {
     private SurfaceView surfaceView;
+    private TextView overlayView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        FrameLayout layout = new FrameLayout(this);
         surfaceView = new SurfaceView(this);
         surfaceView.getHolder().addCallback(this);
-        setContentView(surfaceView);
+
+        overlayView = new TextView(this);
+        overlayView.setText("Cobalt2D Android Demo");
+        overlayView.setPadding(24, 24, 24, 24);
+        overlayView.setTextSize(18f);
+        overlayView.setTextColor(0xFFFFFFFF);
+        overlayView.setBackgroundColor(0x66000000);
+
+        layout.addView(surfaceView);
+        layout.addView(overlayView);
+        setContentView(layout);
     }
 
     @Override

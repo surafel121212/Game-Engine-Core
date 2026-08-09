@@ -21,6 +21,7 @@ bool running = false;
 std::thread renderThread;
 
 bool createContext(ANativeWindow* newWindow) {
+  if (!newWindow) return false;
   display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
   if (display == EGL_NO_DISPLAY || !eglInitialize(display, nullptr, nullptr)) return false;
   const EGLint attributes[] = {
@@ -55,19 +56,31 @@ void renderLoop() {
       engine->update();
       engine->render();
     }
-    if (display != EGL_NO_DISPLAY) eglSwapBuffers(display, surface);
+    if (display != EGL_NO_DISPLAY && surface != EGL_NO_SURFACE) {
+      eglSwapBuffers(display, surface);
+    }
   }
 }
 }  // namespace
 
 extern "C" JNIEXPORT void JNICALL
 Java_dev_cobalt_engine_MainActivity_nativeSurfaceCreated(JNIEnv* env, jclass, jobject javaSurface) {
-  std::lock_guard lock(mutex);
-  window = ANativeWindow_fromSurface(env, javaSurface);
-  if (!engine) engine = std::make_unique<cobalt::Engine>();
-  engine->initialize();
-  createContext(window);
-  running = true;
+  if (renderThread.joinable()) {
+    running = false;
+    renderThread.join();
+  }
+  {
+    std::lock_guard lock(mutex);
+    if (window) {
+      ANativeWindow_release(window);
+      window = nullptr;
+    }
+    window = ANativeWindow_fromSurface(env, javaSurface);
+    if (!engine) engine = std::make_unique<cobalt::Engine>();
+    engine->initialize();
+    createContext(window);
+    running = true;
+  }
   renderThread = std::thread(renderLoop);
 }
 
@@ -84,11 +97,15 @@ Java_dev_cobalt_engine_MainActivity_nativeSurfaceDestroyed(JNIEnv*, jclass) {
     running = false;
   }
   if (renderThread.joinable()) renderThread.join();
-  std::lock_guard lock(mutex);
-  if (engine) engine->onSurfaceDestroyed();
-  destroyContext();
-  if (window) ANativeWindow_release(window);
-  window = nullptr;
+  {
+    std::lock_guard lock(mutex);
+    if (engine) engine->onSurfaceDestroyed();
+    destroyContext();
+    if (window) {
+      ANativeWindow_release(window);
+      window = nullptr;
+    }
+  }
 }
 
 extern "C" JNIEXPORT void JNICALL

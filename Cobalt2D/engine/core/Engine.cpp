@@ -18,6 +18,11 @@ bool Engine::initialize() {
     log::error("Engine initialization failed");
     return false;
   }
+  if (scene_ && scene_->objects().empty()) {
+    auto& fallback = scene_->createObject("Backdrop");
+    fallback.add<TransformComponent>();
+    fallback.add<SpriteRendererComponent>().texture = "default-sprite";
+  }
   input_.bind("MoveLeft", Key::Left);
   input_.bind("MoveRight", Key::Right);
   input_.bind("Jump", Key::Space);
@@ -52,6 +57,21 @@ void Engine::update() {
 void Engine::render() {
   if (!initialized_ || !surfaceReady_) return;
   renderer_.beginFrame();
+  if (scene_) {
+    for (const auto* entity : scene_->objects()) {
+      const auto* transform = entity->get<TransformComponent>();
+      const auto* sprite = entity->get<SpriteRendererComponent>();
+      if (!transform || !sprite) continue;
+      SpriteDrawCommand command;
+      command.texture = sprite->texture;
+      command.transform = transform->local;
+      command.size = sprite->size;
+      command.tint = sprite->tint;
+      command.layer = sprite->sortingLayer;
+      command.order = sprite->order;
+      renderer_.submit(std::move(command));
+    }
+  }
   renderer_.endFrame();
   profiler_.setDrawCalls(renderer_.drawCallCount());
   profiler_.endFrame(time_.fps());
