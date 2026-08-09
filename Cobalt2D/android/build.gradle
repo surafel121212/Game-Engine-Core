@@ -1,3 +1,14 @@
 plugins {
     id "com.android.application" version "8.7.3" apply false
 }
+
+subprojects {
+    configurations.all {
+        resolutionStrategy {
+            // Force consistent Kotlin version across all dependencies
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        }
+    }
+}
