@@ -74,6 +74,9 @@ jobs:
         with:
           gradle-version: "9.3.1"
 
+      - name: Make gradlew executable
+        run: chmod +x Cobalt2D/android/gradlew
+
       - name: Build debug APK
         run: cd Cobalt2D/android && ./gradlew --no-daemon assembleDebug
 
