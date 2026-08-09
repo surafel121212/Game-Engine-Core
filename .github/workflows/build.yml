@@ -30,16 +30,68 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager "platforms;android-35" "build-tools;35.0.0" "cmake;3.22.1" "ndk;27.0.12077973"
 
+      - name: Verify Java environment
+        run: |
+          echo "=== Java Version ==="
+          java -version
+          echo "=== JAVA_HOME ==="
+          echo "$JAVA_HOME"
+          JAVA_MAJOR_VERSION=$(java -version 2>&1 | head -1 | cut -d'"' -f2 | sed 's/^1\.//' | cut -d'.' -f1)
+          if [ "$JAVA_MAJOR_VERSION" -lt 17 ]; then
+            echo "Error: Java version is lower than 17 (detected: $JAVA_MAJOR_VERSION)"
+            exit 1
+          fi
+          echo "Java version $JAVA_MAJOR_VERSION is valid"
+
+      - name: Create temporary debug keystore
+        run: |
+          if [ -f "./debug.keystore" ]; then
+            echo "debug.keystore already exists"
+          else
+            echo "Generating debug.keystore..."
+            keytool -genkey -v \
+              -keystore ./debug.keystore \
+              -storepass android \
+              -alias androiddebugkey \
+              -keypass android \
+              -dname "CN=Android Debug,O=Android,C=US" \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000
+            if [ $? -ne 0 ]; then
+              echo "Error: Failed to generate debug.keystore"
+              exit 1
+            fi
+          fi
+          if [ ! -f "./debug.keystore" ]; then
+            echo "Error: debug.keystore does not exist after generation attempt"
+            exit 1
+          fi
+          echo "debug.keystore is ready"
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.9"
+          gradle-version: "9.3.1"
 
       - name: Build debug APK
         run: cd Cobalt2D/android && ./gradlew --no-daemon assembleDebug
+
+      - name: Verify APK exists
+        run: |
+          APK_PATH="Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk"
+          if [ -f "$APK_PATH" ]; then
+            echo "APK found at $APK_PATH"
+          else
+            echo "Error: APK not found at $APK_PATH"
+            echo "Searching for APK files in Cobalt2D/android/app/build/outputs/apk..."
+            find Cobalt2D/android/app/build/outputs/apk -name "*.apk" -type f
+            exit 1
+          fi
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: cobalt2d-debug-apk
           path: Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
