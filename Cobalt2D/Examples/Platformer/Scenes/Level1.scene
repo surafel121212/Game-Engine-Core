@@ -1,0 +1,9 @@
+{
+  "name": "Level1",
+  "objects": [
+    {"id": 1, "name": "Player", "enabled": true, "parent": 0},
+    {"id": 2, "name": "Camera2D", "enabled": true, "parent": 1},
+    {"id": 3, "name": "Ground", "enabled": true, "parent": 0},
+    {"id": 4, "name": "Goal", "enabled": true, "parent": 0}
+  ]
+}

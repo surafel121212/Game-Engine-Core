@@ -1,6 +1,8 @@
-# [Project name]
+# Cobalt2D
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Cobalt2D is an original, modular C++17 2D game engine source project with an
+Android Studio shell, JNI/OpenGL ES runtime, Lua/Box2D-ready systems, an
+example platformer, native tests, and GitHub Actions APK builds.
 
 ## Run & Operate
 
@@ -22,23 +24,44 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `Cobalt2D/engine/` — engine lifecycle, math, ECS/scenes, renderer, input,
+  physics, scripting, animation, tilemaps, particles, audio, and UI.
+- `Cobalt2D/android/` — Android Studio project, Java `SurfaceView`, JNI bridge,
+  EGL/OpenGL ES surface lifecycle, and native CMake target.
+- `Cobalt2D/Examples/Platformer/` — scene, tilemap, Lua gameplay script, and
+  example notes.
+- `Cobalt2D/tests/` — native regression tests.
+- `Cobalt2D/.github/workflows/android-build.yml` — reproducible debug APK CI.
+- `Cobalt2D/README.md` and `Cobalt2D/docs/` — source project documentation.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The Android app keeps Java limited to lifecycle/touch bridging; engine state
+  and rendering remain in C++.
+- The renderer collects backend-neutral sprite commands so mobile GL batching
+  can evolve without coupling gameplay to OpenGL calls.
+- Scene persistence is intentionally human-readable and diffable.
+- Box2D and Lua are optional CMake features for the desktop/native build; the
+  engine APIs remain usable in lean Android configurations.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The project is a starting point for Android-first 2D games. Developers can
+create scenes and entities, attach typed components, drive gameplay from Lua,
+and build a debug APK in GitHub Actions.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+Keep implementations honest: when a subsystem is not complete, expose the
+working boundary and document the limitation instead of adding a fake facade.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The native source lives under `Cobalt2D/`; Android Studio opens
+  `Cobalt2D/android/`, not the workspace root.
+- The Replit environment does not provide CMake, so native checks here use
+  direct C++17 syntax/test compilation. GitHub Actions installs CMake, NDK,
+  SDK, and Gradle.
 
 ## Pointers
 

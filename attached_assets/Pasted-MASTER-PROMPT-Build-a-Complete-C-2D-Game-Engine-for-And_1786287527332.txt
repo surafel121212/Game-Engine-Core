@@ -1,0 +1,1143 @@
+MASTER PROMPT — Build a Complete C++ 2D Game Engine for Android
+
+You are an expert C++ game-engine architect, Android NDK developer, graphics programmer, tools programmer, UI/UX engineer, build-system engineer, and GitHub Actions engineer.
+
+Build a complete, production-oriented 2D game engine and editor from scratch.
+
+The engine should be inspired by the workflow and usability of engines such as Godot and Unity, but it must be an original implementation. Do NOT copy proprietary code, assets, branding, UI, or source code from any existing engine.
+
+The primary target platform is Android.
+
+The engine itself must be written primarily in modern C++ (C++17 or newer).
+
+The final repository must be a complete Android-ready project that can be pushed to GitHub and built into an APK using GitHub Actions.
+
+IMPORTANT:
+
+- Do NOT focus on building the APK inside Replit.
+- The goal is to generate the COMPLETE SOURCE PROJECT.
+- The project must contain everything required for a later Android build.
+- GitHub Actions must be configured to build the Android application.
+- The engine must be usable as a real 2D game-development framework, not merely a demo.
+- Do not create fake placeholder systems that pretend to work.
+- Implement working systems wherever reasonably possible.
+- Keep the architecture modular and extensible.
+
+---
+
+1. ENGINE ARCHITECTURE
+
+Create a modular architecture similar in concept to a professional game engine.
+
+Use:
+
+- C++17+
+- CMake
+- Android NDK
+- OpenGL ES 3.x where available
+- OpenGL ES 2.0 fallback where practical
+- Box2D for 2D physics
+- Dear ImGui for editor tooling where appropriate
+- Lua for optional game scripting
+- stb_image or an equivalent lightweight image loader
+- miniaudio or another suitable lightweight audio solution
+- Git/GitHub compatible project structure
+
+Do not make unnecessary dependencies.
+
+Organize the code into modules:
+
+Engine/
+Core/
+Math/
+ECS/
+Scene/
+Renderer/
+Graphics/
+Physics/
+Audio/
+Input/
+Animation/
+Particles/
+Tilemap/
+UI/
+Scripting/
+Resources/
+Serialization/
+Networking/
+Debug/
+Platform/
+Android/
+
+Editor/
+MainWindow/
+SceneView/
+Hierarchy/
+Inspector/
+AssetBrowser/
+TilemapEditor/
+AnimationEditor/
+Console/
+ProjectSettings/
+BuildSettings/
+
+Runtime/
+Android/
+
+Examples/
+BasicGame/
+Platformer/
+TopDown/
+
+Tests/
+
+.github/
+workflows/
+
+---
+
+2. CORE ENGINE
+
+Implement a central Engine class with a proper lifecycle:
+
+initialize()
+run()
+update()
+render()
+shutdown()
+
+Support:
+
+- fixed timestep
+- variable timestep
+- delta time
+- frame timing
+- FPS counter
+- pause
+- resume
+- scene switching
+- application lifecycle
+- Android activity lifecycle
+- low-memory handling
+- background/foreground handling
+
+Create clean interfaces between the engine and platform layer.
+
+---
+
+3. GAME OBJECT / ENTITY SYSTEM
+
+Implement a proper entity/component architecture.
+
+Each game object/entity should be able to contain components such as:
+
+Transform
+SpriteRenderer
+Camera
+RigidBody2D
+Collider2D
+BoxCollider2D
+CircleCollider2D
+PolygonCollider2D
+Animator
+AudioSource
+ParticleEmitter
+Script
+Tilemap
+UIElement
+Light2D
+Custom components
+
+Implement:
+
+- entity creation
+- entity destruction
+- parent/child hierarchy
+- component addition/removal
+- component lookup
+- unique entity IDs
+- scene ownership
+- serialization
+
+Example conceptual API:
+
+GameObject player = scene.createObject("Player");
+
+player.addComponent<Transform>();
+player.addComponent<SpriteRenderer>();
+player.addComponent<RigidBody2D>();
+player.addComponent<Collider2D>();
+player.addComponent<ScriptComponent>();
+
+---
+
+4. TRANSFORM SYSTEM
+
+Implement:
+
+- position
+- rotation
+- scale
+- local transform
+- world transform
+- parent transform
+- child transform
+- transform inheritance
+
+Use efficient matrix/vector math.
+
+Provide:
+
+Vector2
+Vector3
+Vector4
+Matrix3
+Matrix4
+Quaternion where useful
+
+---
+
+5. 2D RENDERER
+
+Create a real 2D renderer.
+
+Features:
+
+- sprites
+- textures
+- texture atlases
+- sprite sheets
+- batching
+- transparency
+- alpha blending
+- color tint
+- rotation
+- scaling
+- flipping
+- z-order
+- layers
+- render queues
+- cameras
+- viewport
+- resolution scaling
+
+Use OpenGL ES.
+
+Implement:
+
+Renderer2D
+Texture
+TextureAtlas
+Shader
+Material
+Sprite
+Camera2D
+RenderTarget
+Framebuffer where supported
+
+The renderer should be optimized for mobile devices.
+
+Use batching to reduce draw calls.
+
+---
+
+6. SPRITE SYSTEM
+
+Support:
+
+- PNG
+- JPG where appropriate
+- sprite sheets
+- texture regions
+- atlas coordinates
+- sprite pivot
+- nine-patch style UI sprites if practical
+- sprite flipping
+- sprite color modulation
+
+Allow users to drag an image into the editor and create a sprite object.
+
+---
+
+7. CAMERA SYSTEM
+
+Implement Camera2D.
+
+Features:
+
+- position
+- zoom
+- rotation
+- viewport
+- camera follow
+- smoothing
+- bounds
+- dead zone
+- screen shake
+- world-to-screen conversion
+- screen-to-world conversion
+
+---
+
+8. PHYSICS
+
+Integrate Box2D.
+
+Support:
+
+- Rigidbody2D
+- static body
+- dynamic body
+- kinematic body
+- box collider
+- circle collider
+- polygon collider
+- capsule-like collider where practical
+- gravity
+- friction
+- restitution
+- collision layers
+- collision masks
+- triggers
+- collision callbacks
+- raycasts
+- overlap queries
+
+Expose physics functionality to Lua scripts.
+
+---
+
+9. INPUT SYSTEM
+
+Create a unified input system.
+
+Support:
+
+- Android touch
+- multi-touch
+- mouse
+- keyboard for editor/testing
+- gamepad where available
+
+Provide APIs:
+
+Input.isPressed()
+Input.isReleased()
+Input.isDown()
+Input.getTouchPosition()
+Input.getTouchCount()
+
+Allow configurable input actions.
+
+Example:
+
+MoveLeft
+MoveRight
+Jump
+Attack
+Pause
+
+Create an Input Map editor.
+
+---
+
+10. LUA SCRIPTING SYSTEM
+
+THIS IS VERY IMPORTANT.
+
+The engine must allow game developers to create games using scripts instead of modifying engine C++ code.
+
+Integrate Lua into the engine.
+
+Each GameObject should optionally have a Lua script component.
+
+Example:
+
+Player.lua
+
+function onStart()
+print("Player started")
+end
+
+function onUpdate(dt)
+if Input.isDown("MoveRight") then
+transform.position.x = transform.position.x + 200 * dt
+end
+
+if Input.isPressed("Jump") then
+    rigidbody:applyImpulse(0, 500)
+end
+
+end
+
+function onCollision(other)
+print("Collision with " .. other.name)
+end
+
+Expose engine APIs to Lua:
+
+GameObject
+Transform
+SpriteRenderer
+Animator
+Rigidbody2D
+Collider2D
+Camera
+AudioSource
+ParticleEmitter
+Input
+Physics
+Scene
+Time
+Debug
+Math
+Random
+Resources
+
+Support:
+
+onStart()
+onUpdate(dt)
+onFixedUpdate(dt)
+onDestroy()
+onCollision()
+onTriggerEnter()
+onTriggerExit()
+
+Allow scripts to be attached/detached through the editor.
+
+Provide script reload where reasonably possible.
+
+---
+
+11. OPTIONAL NATIVE C++ GAME CODE
+
+Allow advanced developers to extend the engine using C++.
+
+Provide:
+
+NativeComponent
+NativeScript
+
+Document how a developer can create custom C++ gameplay components.
+
+The engine core must remain separate from game-specific code.
+
+---
+
+12. SCENE SYSTEM
+
+Implement a scene system.
+
+Features:
+
+- create scene
+- save scene
+- load scene
+- duplicate scene
+- rename scene
+- delete scene
+- scene switching
+- scene hierarchy
+- prefab-like reusable objects
+
+Use a human-readable serialization format such as JSON.
+
+Example:
+
+Scenes/
+MainMenu.scene
+Level1.scene
+Level2.scene
+
+---
+
+13. PREFAB / REUSABLE OBJECT SYSTEM
+
+Implement a reusable prefab system.
+
+A prefab should contain:
+
+- components
+- hierarchy
+- properties
+- scripts
+- references
+
+Allow:
+
+Create Prefab
+Open Prefab
+Instantiate Prefab
+Override properties
+Apply changes
+
+---
+
+14. TILEMAP SYSTEM
+
+Implement a complete 2D tilemap system.
+
+Features:
+
+- tilemap grid
+- tileset
+- tile selection
+- brush
+- rectangle tool
+- fill tool
+- erase tool
+- tile flipping
+- tile rotation
+- multiple layers
+- collision layer
+- sorting layer
+
+Create a Tilemap Editor inside the engine editor.
+
+---
+
+15. ANIMATION SYSTEM
+
+Implement sprite animation.
+
+Support:
+
+- animation clips
+- sprite frame animation
+- looping
+- playback speed
+- animation states
+- transitions
+- idle
+- walk
+- run
+- jump
+- attack
+
+Create an Animation Editor.
+
+Allow:
+
+Play
+Pause
+Stop
+Preview
+Add frame
+Remove frame
+Change frame duration
+
+---
+
+16. PARTICLE SYSTEM
+
+Implement a 2D particle system.
+
+Features:
+
+- emission rate
+- lifetime
+- velocity
+- acceleration
+- gravity
+- size
+- rotation
+- color
+- texture
+- burst emission
+
+Provide a particle editor/inspector.
+
+---
+
+17. AUDIO SYSTEM
+
+Implement:
+
+- music
+- sound effects
+- audio source
+- volume
+- pitch
+- looping
+- pause/resume
+- audio groups
+
+Expose audio controls to Lua.
+
+Example:
+
+Audio.play("jump.wav")
+Audio.playMusic("music.ogg")
+Audio.setMusicVolume(0.5)
+
+---
+
+18. UI SYSTEM
+
+Create a basic 2D UI framework.
+
+Support:
+
+- panel
+- label
+- image
+- button
+- checkbox
+- slider
+- progress bar
+- scroll container
+- text input
+
+Support anchors and responsive layouts.
+
+Make UI usable for Android touch screens.
+
+---
+
+19. LIGHTING
+
+Implement a lightweight optional 2D lighting system.
+
+Support:
+
+- point lights
+- ambient light
+- light color
+- radius
+- intensity
+- simple shadows where practical
+
+Make lighting optional so low-end Android devices can disable it.
+
+---
+
+20. ASSET MANAGEMENT
+
+Create an asset manager.
+
+Support:
+
+Textures
+Sprites
+Audio
+Fonts
+Scenes
+Prefabs
+Scripts
+Tilemaps
+Animations
+Shaders
+
+Automatically import assets from the project Assets folder.
+
+Track asset metadata.
+
+Provide asset thumbnails in the editor.
+
+---
+
+21. EDITOR
+
+Create a real game editor.
+
+The editor should contain:
+
+- Scene View
+- Hierarchy panel
+- Inspector panel
+- Asset Browser
+- Toolbar
+- Console
+- Game Preview
+- Project Settings
+- Build Settings
+
+Basic layout:
+
++------------------------------------------------+
+| File Edit View Project Tools Help             |
++------------------------------------------------+
+| Toolbar                                        |
++----------------+-------------------------------+
+| Hierarchy      |                               |
+|                |          Scene View           |
+|                |                               |
+|                |                               |
++----------------+-------------------------------+
+| Assets         | Inspector                    |
+|                |                               |
++----------------+-------------------------------+
+
+Use Dear ImGui for editor tooling where appropriate.
+
+---
+
+22. HIERARCHY PANEL
+
+Allow:
+
+- create object
+- delete object
+- duplicate object
+- rename object
+- drag and drop parenting
+- enable/disable object
+- select object
+
+Show components in the hierarchy/inspector.
+
+---
+
+23. INSPECTOR
+
+When an object is selected, display editable properties.
+
+For example:
+
+Transform
+Position
+Rotation
+Scale
+
+SpriteRenderer
+Texture
+Color
+Sorting Layer
+Order
+
+Rigidbody2D
+Body Type
+Mass
+Gravity Scale
+
+Script
+Script File
+
+Changes should immediately affect the selected object.
+
+---
+
+24. SCENE EDITOR
+
+Support:
+
+- move tool
+- rotate tool
+- scale tool
+- grid snapping
+- zoom
+- pan
+- object selection
+- multi-selection where practical
+
+Keyboard shortcuts for editor testing.
+
+---
+
+25. CONSOLE / DEBUGGER
+
+Create a console.
+
+Display:
+
+INFO
+WARNING
+ERROR
+DEBUG
+
+Allow Lua print() messages to appear in the editor console.
+
+Add basic error reporting with file and line information for Lua errors.
+
+---
+
+26. PROJECT SETTINGS
+
+Create settings for:
+
+- project name
+- package/application ID
+- orientation
+- resolution
+- default scene
+- physics gravity
+- input actions
+- Android settings
+- rendering settings
+- audio settings
+
+---
+
+27. ANDROID SUPPORT
+
+The project must be designed specifically for Android.
+
+Use:
+
+- Android NDK
+- CMake
+- JNI
+- Android NativeActivity or a clean Activity + native rendering architecture
+- OpenGL ES
+- Android touch input
+- Android lifecycle callbacks
+
+Handle:
+
+- app launch
+- pause
+- resume
+- surface creation
+- surface destruction
+- orientation
+- screen size changes
+- touch events
+
+Avoid desktop-only assumptions in the runtime.
+
+---
+
+28. ANDROID PROJECT STRUCTURE
+
+Create a complete Android project.
+
+It should contain the necessary:
+
+gradle files
+settings.gradle
+build.gradle
+app module
+AndroidManifest.xml
+CMakeLists.txt
+native C++ sources
+JNI/native bridge
+resources
+assets
+
+The Android project should be ready to open in Android Studio.
+
+Do not require the developer to manually reconstruct the Android project.
+
+---
+
+29. GITHUB ACTIONS
+
+Create:
+
+.github/workflows/android-build.yml
+
+The workflow must:
+
+1. Checkout repository.
+2. Setup Java.
+3. Setup Android SDK.
+4. Install required Android SDK packages.
+5. Setup/configure NDK.
+6. Setup CMake if required.
+7. Make Gradle executable.
+8. Build debug APK.
+9. Optionally build release APK when configured.
+10. Upload APK as a GitHub Actions artifact.
+
+Example artifact:
+
+game-engine-debug.apk
+
+Also create a release workflow if practical.
+
+Do not store secrets in source code.
+
+---
+
+30. CMAKE
+
+Create clean CMake configuration.
+
+The native project must be modular.
+
+Link:
+
+- engine library
+- game runtime
+- Box2D
+- Lua
+- graphics dependencies
+- Android native libraries
+
+Use clear targets.
+
+Example conceptual structure:
+
+EngineCore
+EngineGraphics
+EnginePhysics
+EngineAudio
+EngineScripting
+GameRuntime
+
+---
+
+31. EXAMPLE GAME
+
+Include at least one working example game.
+
+Create a simple 2D platformer demonstrating:
+
+- player
+- sprite
+- physics
+- collision
+- camera
+- animation
+- Lua scripting
+- input
+- sound
+- scene
+- tilemap
+
+Example:
+
+Examples/Platformer/
+
+The example should demonstrate how a real developer uses the engine.
+
+---
+
+32. DOCUMENTATION
+
+Create comprehensive documentation.
+
+README.md
+
+Include:
+
+- engine overview
+- architecture
+- requirements
+- how to open the project
+- how to build Android APK
+- how to create a scene
+- how to create a GameObject
+- how to add components
+- how to create a Lua script
+- Lua API reference
+- physics usage
+- sprite usage
+- animation usage
+- tilemap usage
+- audio usage
+- Android build instructions
+- GitHub Actions instructions
+
+Also create:
+
+docs/
+getting-started.md
+scripting.md
+physics.md
+rendering.md
+scenes.md
+tilemaps.md
+animation.md
+android.md
+github-actions.md
+architecture.md
+
+---
+
+33. SCRIPTING EXAMPLE
+
+Include:
+
+Scripts/Player.lua
+
+Demonstrate:
+
+function onStart()
+end
+
+function onUpdate(dt)
+end
+
+function onFixedUpdate(dt)
+end
+
+function onCollision(other)
+end
+
+The example should show actual movement and jumping.
+
+---
+
+34. PERFORMANCE
+
+The engine targets mobile devices.
+
+Optimize for:
+
+- low draw calls
+- sprite batching
+- texture reuse
+- object lifetime
+- memory allocation
+- asset caching
+- physics update frequency
+- garbage collection of Lua objects
+- low CPU usage
+- low GPU usage
+
+Avoid unnecessary per-frame allocations.
+
+---
+
+35. ERROR HANDLING
+
+Do not allow engine failures to silently occur.
+
+Provide:
+
+- logging
+- assertions in debug builds
+- graceful runtime errors
+- Lua error messages
+- asset loading errors
+- shader compilation errors
+- Android initialization errors
+
+---
+
+36. TESTING
+
+Create tests for important engine modules.
+
+Test:
+
+- math
+- transforms
+- scene serialization
+- entity/component system
+- physics integration
+- scripting
+- asset loading where practical
+
+---
+
+37. CODE QUALITY
+
+Requirements:
+
+- clean modern C++
+- RAII
+- smart pointers where appropriate
+- minimal global state
+- clear ownership
+- modular architecture
+- comments for complex code
+- no giant monolithic source file
+- no unnecessary duplicated code
+
+Do not create fake implementations merely to make compilation succeed.
+
+If a feature cannot reasonably be completed in one stage, implement the core correctly and document the remaining work instead of pretending it is finished.
+
+---
+
+38. IMPORTANT DEVELOPMENT RULE
+
+Build the project incrementally.
+
+First make the core compile.
+
+Then implement:
+
+1. Core
+2. Math
+3. Renderer
+4. Texture/Sprite
+5. Scene
+6. Entity/Component
+7. Input
+8. Physics
+9. Lua
+10. Animation
+11. Tilemap
+12. Audio
+13. Particles
+14. UI
+15. Editor
+16. Android runtime
+17. GitHub Actions
+18. Example game
+19. Documentation
+20. Tests
+
+After each major subsystem, verify that the project still builds.
+
+Fix compiler errors instead of ignoring them.
+
+Do not leave broken imports or missing files.
+
+---
+
+39. FINAL PROJECT REQUIREMENT
+
+When finished, the repository must contain a complete source project.
+
+The expected workflow is:
+
+Replit
+→ develop engine
+→ export/push complete repository
+→ GitHub
+→ GitHub Actions
+→ Android build
+→ APK artifact
+
+The user should NOT have to manually create the Android project from scratch.
+
+The user should NOT have to manually recreate CMake configuration.
+
+The user should NOT have to manually recreate Gradle configuration.
+
+The user should NOT have to manually add the NDK bridge.
+
+Everything necessary for the Android build should already exist in the repository.
+
+---
+
+40. FINAL CHECK
+
+Before declaring the project complete:
+
+- Verify directory structure.
+- Verify CMake configuration.
+- Verify Gradle configuration.
+- Verify AndroidManifest.
+- Verify JNI/native bridge.
+- Verify Lua integration.
+- Verify Box2D integration.
+- Verify OpenGL ES renderer.
+- Verify asset loading.
+- Verify scene serialization.
+- Verify GitHub Actions.
+- Verify example game.
+- Verify documentation.
+- Remove broken placeholder code.
+- Fix compilation errors.
+- Fix missing includes.
+- Fix incorrect library links.
+- Make the project reproducible from a clean checkout.
+
+At the end, provide a concise report containing:
+
+1. What was implemented.
+2. Project structure.
+3. How the editor works.
+4. How Lua scripting works.
+5. How to create a game.
+6. How to push to GitHub.
+7. How GitHub Actions builds the APK.
+8. Known limitations, if any.
+
+Do not stop after creating a prototype. Continue implementing the systems until the repository forms a coherent, usable, Android-ready 2D game engine.

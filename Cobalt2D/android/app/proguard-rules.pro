@@ -1,0 +1,1 @@
+# Cobalt2D keeps the native engine entry points reachable from Java.

@@ -1,0 +1,1 @@
+- [Native build environment](native-build-environment.md) — Replit's shell lacks CMake, so validate C++ modules directly here and rely on CI/Android Studio for CMake builds.
