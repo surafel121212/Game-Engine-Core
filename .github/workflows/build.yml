@@ -6,11 +6,8 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-  debug-apk:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,13 +20,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK packages
-        run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platforms;android-35" "build-tools;35.0.0" "cmake;3.22.1" "ndk;27.0.12077973"
+      - name: Setup Gradle 9.3.1
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
 
       - name: Verify Java environment
         run: |
@@ -68,39 +62,23 @@ jobs:
           fi
           echo "Successfully verified ./debug.keystore exists."
 
-      - name: Setup Gradle 9.3.1
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.3.1'
-
-      - name: Fix gradlew line endings and make executable
-        run: |
-          cd Cobalt2D/android
-          tr -d '\r' < gradlew > gradlew.tmp && mv gradlew.tmp gradlew
-          chmod +x gradlew
-          echo "gradlew fixed and made executable"
-
       - name: Build Debug APK
-        run: |
-          cd Cobalt2D/android
-          ./gradlew --no-daemon assembleDebug --stacktrace
+        run: gradle :app:assembleDebug --stacktrace --no-daemon
 
       - name: Verify Debug APK exists
         run: |
-          APK_PATH="Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk"
-          if [ -f "$APK_PATH" ]; then
-            echo "APK found at $APK_PATH"
-            ls -lh "$APK_PATH"
+          if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+            echo "app/build/outputs/apk/debug/app-debug.apk exists."
           else
-            echo "Error: Expected APK $APK_PATH does not exist!"
-            echo "Searching for APK files in Cobalt2D/android/app/build/outputs/apk:"
-            find Cobalt2D/android/app/build/outputs/apk -name "*.apk" -type f 2>/dev/null || echo "No APK files found"
+            echo "Error: Expected APK app/build/outputs/apk/debug/app-debug.apk does not exist!"
+            echo "Searching inside app/build/outputs/apk:"
+            find app/build/outputs/apk -name "*.apk" || true
             exit 1
           fi
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: cobalt2d-debug-apk
-          path: Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
