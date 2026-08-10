@@ -1,9 +1,9 @@
-name: Android build
+name: Build Debug APK
 
 on:
   push:
-    branches: ["main", "master"]
-  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,17 +12,18 @@ permissions:
 jobs:
   debug-apk:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: "17"
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
       - name: Install Android SDK packages
@@ -32,23 +33,24 @@ jobs:
 
       - name: Verify Java environment
         run: |
-          echo "=== Java Version ==="
           java -version
-          echo "=== JAVA_HOME ==="
-          echo "$JAVA_HOME"
-          JAVA_MAJOR_VERSION=$(java -version 2>&1 | head -1 | cut -d'"' -f2 | sed 's/^1\.//' | cut -d'.' -f1)
-          if [ "$JAVA_MAJOR_VERSION" -lt 17 ]; then
-            echo "Error: Java version is lower than 17 (detected: $JAVA_MAJOR_VERSION)"
+          echo "JAVA_HOME=$JAVA_HOME"
+          JAVA_MAJOR=$(java -version 2>&1 | head -n 1 | sed -E 's/.*version "([^"]+)".*/\1/' | cut -d. -f1)
+          if [ "$JAVA_MAJOR" -eq 1 ] 2>/dev/null; then
+            JAVA_MAJOR=$(java -version 2>&1 | head -n 1 | sed -E 's/.*version "([^"]+)".*/\1/' | cut -d. -f2)
+          fi
+          echo "Detected Java Major Version: $JAVA_MAJOR"
+          if [ -z "$JAVA_MAJOR" ] || [ "$JAVA_MAJOR" -lt 17 ]; then
+            echo "Error: Active Java version ($JAVA_MAJOR) is lower than 17!"
             exit 1
           fi
-          echo "Java version $JAVA_MAJOR_VERSION is valid"
 
       - name: Create temporary debug keystore
         run: |
           if [ -f "./debug.keystore" ]; then
-            echo "debug.keystore already exists"
+            echo "./debug.keystore already exists."
           else
-            echo "Generating debug.keystore..."
+            echo "Generating temporary debug.keystore..."
             keytool -genkey -v \
               -keystore ./debug.keystore \
               -storepass android \
@@ -58,45 +60,45 @@ jobs:
               -keyalg RSA \
               -keysize 2048 \
               -validity 10000
-            if [ $? -ne 0 ]; then
-              echo "Error: Failed to generate debug.keystore"
-              exit 1
-            fi
           fi
+
           if [ ! -f "./debug.keystore" ]; then
-            echo "Error: debug.keystore does not exist after generation attempt"
+            echo "Error: Failed to create ./debug.keystore"
             exit 1
           fi
-          echo "debug.keystore is ready"
+          echo "Successfully verified ./debug.keystore exists."
 
-      - name: Set up Gradle
+      - name: Setup Gradle 9.3.1
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.3.1"
+          gradle-version: '9.3.1'
 
       - name: Fix gradlew line endings and make executable
         run: |
           cd Cobalt2D/android
-          sed -i 's/\r$//' gradlew
+          tr -d '\r' < gradlew > gradlew.tmp && mv gradlew.tmp gradlew
           chmod +x gradlew
           echo "gradlew fixed and made executable"
 
-      - name: Build debug APK
-        run: cd Cobalt2D/android && ./gradlew --no-daemon assembleDebug
+      - name: Build Debug APK
+        run: |
+          cd Cobalt2D/android
+          ./gradlew --no-daemon assembleDebug --stacktrace
 
-      - name: Verify APK exists
+      - name: Verify Debug APK exists
         run: |
           APK_PATH="Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk"
           if [ -f "$APK_PATH" ]; then
             echo "APK found at $APK_PATH"
+            ls -lh "$APK_PATH"
           else
-            echo "Error: APK not found at $APK_PATH"
-            echo "Searching for APK files in Cobalt2D/android/app/build/outputs/apk..."
-            find Cobalt2D/android/app/build/outputs/apk -name "*.apk" -type f
+            echo "Error: Expected APK $APK_PATH does not exist!"
+            echo "Searching for APK files in Cobalt2D/android/app/build/outputs/apk:"
+            find Cobalt2D/android/app/build/outputs/apk -name "*.apk" -type f 2>/dev/null || echo "No APK files found"
             exit 1
           fi
 
-      - name: Upload APK
+      - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: cobalt2d-debug-apk
