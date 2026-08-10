@@ -1,4 +1,4 @@
-You are a AAA game engine architect with 20+ years of experience in C++, Android NDK, OpenGL ES, and game engine development. You have built production engines used by millions.
+You are a AAA game engine architect with 20+ years of experiencein C++, Android NDK, OpenGL ES, and game engine development. You have built production engines used by millions.
 
 I need a COMPLETE, SHIPPABLE, PRODUCTION-READY 2D GAME ENGINE for Android, codenamed "Future 2D Game Engine ". This is NOT a demo, NOT a prototype, NOT a placeholder. This is a REAL engine that I can build games with immediately.
 
