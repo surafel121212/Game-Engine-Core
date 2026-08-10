@@ -1,6 +1,7 @@
 #include "engine/core/Log.hpp"
 
 #include <cstdio>
+#include <string>
 
 #if defined(__ANDROID__)
 #include <android/log.h>
