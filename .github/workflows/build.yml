@@ -14,11 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Java 17
+      - name: Setup Java 11
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '11'
 
       - name: Setup Gradle 9.3.1
         uses: gradle/actions/setup-gradle@v4
@@ -34,13 +34,14 @@ jobs:
             JAVA_MAJOR=$(java -version 2>&1 | head -n 1 | sed -E 's/.*version "([^"]+)".*/\1/' | cut -d. -f2)
           fi
           echo "Detected Java Major Version: $JAVA_MAJOR"
-          if [ -z "$JAVA_MAJOR" ] || [ "$JAVA_MAJOR" -lt 17 ]; then
-            echo "Error: Active Java version ($JAVA_MAJOR) is lower than 17!"
+          if [ -z "$JAVA_MAJOR" ] || [ "$JAVA_MAJOR" -lt 11 ]; then
+            echo "Error: Active Java version ($JAVA_MAJOR) is lower than 11!"
             exit 1
           fi
 
       - name: Create temporary debug keystore
         run: |
+          cd Cobalt2D/android
           if [ -f "./debug.keystore" ]; then
             echo "./debug.keystore already exists."
           else
@@ -63,22 +64,24 @@ jobs:
           echo "Successfully verified ./debug.keystore exists."
 
       - name: Build Debug APK
-        run: gradle :app:assembleDebug --stacktrace --no-daemon
+        run: |
+          cd Cobalt2D/android
+          gradle :app:assembleDebug --stacktrace --no-daemon
 
       - name: Verify Debug APK exists
         run: |
-          if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
-            echo "app/build/outputs/apk/debug/app-debug.apk exists."
+          if [ -f "Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk" ]; then
+            echo "Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk exists."
           else
-            echo "Error: Expected APK app/build/outputs/apk/debug/app-debug.apk does not exist!"
-            echo "Searching inside app/build/outputs/apk:"
-            find app/build/outputs/apk -name "*.apk" || true
+            echo "Error: Expected APK does not exist!"
+            echo "Searching for APK files:"
+            find Cobalt2D/android/app/build/outputs/apk -name "*.apk" || true
             exit 1
           fi
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: cobalt2d-debug-apk
+          path: Cobalt2D/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
