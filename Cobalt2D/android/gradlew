@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+# Gradle start up script for UN*X
+set -e
+
+# Resolve links - $0 may be a symlink
+PRG="$0"
+while [ -h "$PRG" ] ; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG=`dirname "$PRG"`"/"`expr "$link" : '\(.*\)$'`
+  fi
+done
+
+PRGDIR=`dirname "$PRG"`
+
+CLASSPATH="$PRGDIR/gradle/wrapper/gradle-wrapper.jar"
+
+if [ ! -f "$CLASSPATH" ]; then
+  echo "Gradle wrapper JAR not found at $CLASSPATH"
+  echo "You can generate it by running: gradle wrapper --gradle-version 8.9"
+  exit 1
+fi
+
+exec "$JAVA_HOME/bin/java" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

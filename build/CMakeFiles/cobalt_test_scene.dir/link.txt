@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/cobalt_test_scene.dir/tests/test_scene.cpp.o -o cobalt_test_scene  libCobaltEngine.a _deps/box2d-build/bin/libbox2d.a liblua.a 

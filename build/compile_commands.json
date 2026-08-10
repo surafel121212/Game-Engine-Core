@@ -1,0 +1,410 @@
+[
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/core/Engine.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/core/Engine.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/core/Engine.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/core/Engine.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/core/Log.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/core/Log.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/core/Log.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/core/Log.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/core/Time.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/core/Time.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/core/Time.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/core/Time.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/core/Profiler.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/core/Profiler.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/core/Profiler.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/core/Profiler.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/ecs/Scene.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/ecs/Scene.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/ecs/Scene.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/ecs/Scene.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/input/Input.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/input/Input.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/input/Input.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/input/Input.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/physics/PhysicsWorld.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/physics/PhysicsWorld.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/physics/PhysicsWorld.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/physics/PhysicsWorld.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/render/Renderer2D.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/render/Renderer2D.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/render/Renderer2D.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/render/Renderer2D.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/scripting/LuaScript.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/scripting/LuaScript.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/scripting/LuaScript.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/scripting/LuaScript.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/scripting/ScriptRuntime.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/scripting/ScriptRuntime.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/scripting/ScriptRuntime.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/scripting/ScriptRuntime.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/serialization/SceneSerializer.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/serialization/SceneSerializer.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/serialization/SceneSerializer.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/serialization/SceneSerializer.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/animation/Animator.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/animation/Animator.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/animation/Animator.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/animation/Animator.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/audio/AudioSystem.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/audio/AudioSystem.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/audio/AudioSystem.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/audio/AudioSystem.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/particles/ParticleSystem.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/particles/ParticleSystem.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/particles/ParticleSystem.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/particles/ParticleSystem.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/tilemap/Tilemap.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/tilemap/Tilemap.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/tilemap/Tilemap.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/tilemap/Tilemap.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/assets/AssetManager.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/assets/AssetManager.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/assets/AssetManager.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/assets/AssetManager.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/project/ProjectSettings.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/project/ProjectSettings.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/project/ProjectSettings.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/project/ProjectSettings.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/CobaltEngine.dir/engine/editor/CommandHistory.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/engine/editor/CommandHistory.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/engine/editor/CommandHistory.cpp",
+  "output": "CMakeFiles/CobaltEngine.dir/engine/editor/CommandHistory.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/cobalt_test_math.dir/tests/test_math.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/tests/test_math.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/tests/test_math.cpp",
+  "output": "CMakeFiles/cobalt_test_math.dir/tests/test_math.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/cobalt_test_scene.dir/tests/test_scene.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/tests/test_scene.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/tests/test_scene.cpp",
+  "output": "CMakeFiles/cobalt_test_scene.dir/tests/test_scene.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/cobalt_test_runtime.dir/tests/test_runtime.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/tests/test_runtime.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/tests/test_runtime.cpp",
+  "output": "CMakeFiles/cobalt_test_runtime.dir/tests/test_runtime.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/cobalt_test_renderer.dir/tests/test_renderer.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/tests/test_renderer.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/tests/test_renderer.cpp",
+  "output": "CMakeFiles/cobalt_test_renderer.dir/tests/test_renderer.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build",
+  "command": "/usr/bin/clang++ -DCOBALT_HAS_BOX2D=1 -DCOBALT_HAS_LUA=1 -I/workspaces/Game-Engine-Core/Cobalt2D -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/lua-src/src -g -std=c++17 -o CMakeFiles/cobalt_test_upgrade.dir/tests/test_upgrade.cpp.o -c /workspaces/Game-Engine-Core/Cobalt2D/tests/test_upgrade.cpp",
+  "file": "/workspaces/Game-Engine-Core/Cobalt2D/tests/test_upgrade.cpp",
+  "output": "CMakeFiles/cobalt_test_upgrade.dir/tests/test_upgrade.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_broad_phase.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_broad_phase.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_broad_phase.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_broad_phase.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_chain_shape.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_chain_shape.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_chain_shape.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_chain_shape.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_circle_shape.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_circle_shape.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_circle_shape.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_circle_shape.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_collide_circle.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_circle.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_circle.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_circle.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_collide_edge.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_edge.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_edge.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_edge.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_collide_polygon.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_polygon.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collide_polygon.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_polygon.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_collision.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collision.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_collision.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collision.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_distance.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_distance.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_distance.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_distance.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_dynamic_tree.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_dynamic_tree.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_dynamic_tree.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_dynamic_tree.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_edge_shape.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_edge_shape.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_edge_shape.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_edge_shape.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_polygon_shape.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_polygon_shape.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_polygon_shape.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_polygon_shape.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/collision/b2_time_of_impact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_time_of_impact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/collision/b2_time_of_impact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_time_of_impact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_block_allocator.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_block_allocator.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_block_allocator.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_block_allocator.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_draw.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_draw.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_draw.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_draw.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_math.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_math.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_math.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_math.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_settings.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_settings.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_settings.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_settings.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_stack_allocator.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_stack_allocator.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_stack_allocator.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_stack_allocator.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/common/b2_timer.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_timer.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/common/b2_timer.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_timer.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_body.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_body.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_body.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_body.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_chain_circle_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_chain_circle_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_chain_circle_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_circle_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_chain_polygon_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_chain_polygon_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_chain_polygon_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_polygon_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_circle_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_circle_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_circle_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_circle_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_contact_manager.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact_manager.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact_manager.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_manager.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_contact_solver.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact_solver.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_contact_solver.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_solver.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_distance_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_distance_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_distance_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_distance_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_edge_circle_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_edge_circle_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_edge_circle_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_circle_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_edge_polygon_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_edge_polygon_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_edge_polygon_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_polygon_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_fixture.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_fixture.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_fixture.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_fixture.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_friction_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_friction_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_friction_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_friction_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_gear_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_gear_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_gear_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_gear_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_island.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_island.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_island.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_island.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_motor_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_motor_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_motor_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_motor_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_mouse_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_mouse_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_mouse_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_mouse_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_polygon_circle_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_polygon_circle_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_polygon_circle_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_circle_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_polygon_contact.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_polygon_contact.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_polygon_contact.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_contact.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_prismatic_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_prismatic_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_prismatic_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_prismatic_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_pulley_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_pulley_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_pulley_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_pulley_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_revolute_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_revolute_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_revolute_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_revolute_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_weld_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_weld_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_weld_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_weld_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_wheel_joint.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_wheel_joint.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_wheel_joint.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_wheel_joint.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_world.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_world.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_world.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/dynamics/b2_world_callbacks.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_world_callbacks.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/dynamics/b2_world_callbacks.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world_callbacks.cpp.o"
+},
+{
+  "directory": "/workspaces/Game-Engine-Core/build/_deps/box2d-build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/../include -I/workspaces/Game-Engine-Core/build/_deps/box2d-src/src -g -std=c++11 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/box2d.dir/rope/b2_rope.cpp.o -c /workspaces/Game-Engine-Core/build/_deps/box2d-src/src/rope/b2_rope.cpp",
+  "file": "/workspaces/Game-Engine-Core/build/_deps/box2d-src/src/rope/b2_rope.cpp",
+  "output": "_deps/box2d-build/src/CMakeFiles/box2d.dir/rope/b2_rope.cpp.o"
+}
+]

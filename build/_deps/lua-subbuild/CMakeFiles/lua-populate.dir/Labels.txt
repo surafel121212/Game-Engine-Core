@@ -1,0 +1,14 @@
+# Target labels
+ lua-populate
+# Source files and their labels
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate-complete.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-build.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-configure.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-download.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-install.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-mkdir.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-patch.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-test.rule
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-update.rule

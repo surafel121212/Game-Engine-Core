@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/cobalt_test_renderer.dir/tests/test_renderer.cpp.o -o cobalt_test_renderer  libCobaltEngine.a _deps/box2d-build/bin/libbox2d.a liblua.a 

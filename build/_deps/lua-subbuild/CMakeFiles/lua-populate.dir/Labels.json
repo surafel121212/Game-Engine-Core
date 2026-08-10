@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate-complete.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-build.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-configure.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-download.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-install.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-mkdir.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-patch.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-test.rule"
+		},
+		{
+			"file" : "/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/lua-populate-prefix/src/lua-populate-stamp/lua-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"lua-populate"
+		],
+		"name" : "lua-populate"
+	}
+}

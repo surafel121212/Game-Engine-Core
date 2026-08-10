@@ -1,0 +1,3 @@
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/lua-populate.dir
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/edit_cache.dir
+/workspaces/Game-Engine-Core/build/_deps/lua-subbuild/CMakeFiles/rebuild_cache.dir

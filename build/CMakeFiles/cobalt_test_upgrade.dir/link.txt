@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/cobalt_test_upgrade.dir/tests/test_upgrade.cpp.o -o cobalt_test_upgrade  libCobaltEngine.a _deps/box2d-build/bin/libbox2d.a liblua.a 
