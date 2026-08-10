@@ -76,10 +76,10 @@ jobs:
 
       - name: Fix gradlew line endings and make executable
         run: |
-          # Convert Windows line endings to Unix using tr (most reliable method)
-          tr -d '\r' < Cobalt2D/android/gradlew > Cobalt2D/android/gradlew.tmp
-          mv Cobalt2D/android/gradlew.tmp Cobalt2D/android/gradlew
-          chmod +x Cobalt2D/android/gradlew
+          cd Cobalt2D/android
+          sed -i 's/\r$//' gradlew
+          chmod +x gradlew
+          echo "gradlew fixed and made executable"
 
       - name: Build debug APK
         run: cd Cobalt2D/android && ./gradlew --no-daemon assembleDebug
